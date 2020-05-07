@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "SeatcardSorterApp": {
+      "commandName": "Project",
+      "commandLineArgs": "/s:\"C:\\Users\\wm_ra\\Documents\\SeatCard samples\\RigoSeatCardRAWprelim.csv\" /m:\"C:\\Users\\wm_ra\\Documents\\SeatCard samples\\versionmappingdata.csv\""
+    }
+  }
+}

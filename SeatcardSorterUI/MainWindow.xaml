@@ -1,0 +1,88 @@
+﻿<Window x:Class="SeatcardSorterUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SeatcardSorterUI"
+        mc:Ignorable="d"
+        Title="SeatcardSorter" Height="450" Width="800">
+
+    <DockPanel>
+        <TextBlock HorizontalAlignment="Center" DockPanel.Dock="Top" FontSize="30">Seatcard sorter</TextBlock>
+        <TextBlock HorizontalAlignment="Center" DockPanel.Dock="Bottom" Name="StatusText" Margin="0,5,0,0" />
+
+        <TabControl>
+            <TabItem Header="Map and Sort">
+                <Grid MaxWidth="400">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" MinWidth="150" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Grid.Column="0" Margin="0,5,5,0">Source File:</TextBlock>
+                    <TextBox Grid.Row="0" Grid.Column="1" Margin="0,5,0,0" Name="MapSourceFileBox" TextChanged="MapSourceFileBox_TextChanged" />
+                    <Button Grid.Row="0" Grid.Column="2" Margin="0,5,0,0" Click="MapSourceFileBrowse_Click">Browse</Button>
+                    <TextBlock Grid.Row="1" Grid.Column="0" Margin="0,5,5,0">Target File:</TextBlock>
+                    <TextBox Grid.Row="1" Grid.Column="1" Margin="0,5,0,0" Name="MapTargetFileBox" TextChanged="MapTargetFileBox_TextChanged" />
+                    <Button Grid.Row="1" Grid.Column="2" Margin="0,5,0,0" Click="MapTargetFileBrowse_Click">Browse</Button>
+                    <TextBlock Grid.Row="2" Grid.Column="0" Margin="0,5,5,0">Version Name File:</TextBlock>
+                    <TextBox Grid.Row="2" Grid.Column="1" Margin="0,5,0,0" Name="MapVersionNameFileBox" TextChanged="MapVersionNameFileBox_TextChanged" />
+                    <Button Grid.Row="2" Grid.Column="2" Margin="0,5,0,0" Click="MapVersionNameFileBrowse_Click">Browse</Button>
+                    <TextBlock Grid.Row="3" Grid.Column="0" Margin="0,5,5,0">Version Mapping File:</TextBlock>
+                    <TextBox Grid.Row="3" Grid.Column="1" Margin="0,5,0,0" Name="MapVersionMappingFileBox" TextChanged="MapVersionMappingFileBox_TextChanged" />
+                    <Button Grid.Row="3" Grid.Column="2" Margin="0,5,0,0" Click="MapVersionMappingFileBrowse_Click">Browse</Button>
+                    <Button Grid.Row="4" Grid.ColumnSpan="3" Click="Map_Click" Margin="0,5,0,0">Process!</Button>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Re-sort">
+                <Grid MaxWidth="400">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" MinWidth="150" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Grid.Column="0" Margin="0,5,5,0">Source File:</TextBlock>
+                    <TextBox Grid.Row="0" Grid.Column="1" Margin="0,5,0,0" Name="ResortSourceFileBox" TextChanged="ResortSourceFileBox_TextChanged" />
+                    <Button Grid.Row="0" Grid.Column="2" Margin="0,5,0,0" Click="ResortSourceFileBrowse_Click">Browse</Button>
+                    <TextBlock Grid.Row="1" Grid.Column="0" Margin="0,5,5,0">Target File:</TextBlock>
+                    <TextBox Grid.Row="1" Grid.Column="1" Margin="0,5,0,0" Name="ResortTargetFileBox" TextChanged="ResortTargetFileBox_TextChanged" />
+                    <Button Grid.Row="1" Grid.Column="2" Margin="0,5,0,0" Click="ResortTargetFileBrowse_Click">Browse</Button>
+                    <Button Grid.Row="2" Grid.ColumnSpan="3" Click="Resort_Click" Margin="0,5,0,0">Process!</Button>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Find duplicates">
+                <Grid MaxWidth="400">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" MinWidth="150" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Grid.Column="0" Margin="0,5,5,0">Source File:</TextBlock>
+                    <TextBox Grid.Row="0" Grid.Column="1" Margin="0,5,0,0" Name="DupeSourceFileBox" TextChanged="DupeSourceFileBox_TextChanged" />
+                    <Button Grid.Row="0" Grid.Column="2" Margin="0,5,0,0" Click="DupeSourceFileBrowse_Click">Browse</Button>
+                    <TextBlock Grid.Row="1" Grid.Column="0" Margin="0,5,5,0">Target File:</TextBlock>
+                    <TextBox Grid.Row="1" Grid.Column="1" Margin="0,5,0,0" Name="DupeTargetFileBox" TextChanged="DupeTargetFileBox_TextChanged" />
+                    <Button Grid.Row="1" Grid.Column="2" Margin="0,5,0,0" Click="DupeTargetFileBrowse_Click">Browse</Button>
+                    <Button Grid.Row="2" Grid.ColumnSpan="3" Click="Dupe_Click" Margin="0,5,0,0">Process!</Button>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </DockPanel>
+</Window>
